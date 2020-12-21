@@ -67,7 +67,7 @@
 
   </div><div id="info-wrapper" data-ng-show="view.infoPane">
     <div id="info">
-
+      <h2>Built from <a href='https://alg.cubing.net'>https://alg.cubing.net</a></h2>
       <h1>
         <textarea
           id="title"
@@ -128,6 +128,31 @@
 
         <div>
 
+          <div>
+            <h2>Playback Options</h2>
+            <div class="section">
+              Speed: <input type="range" min="0.1" max="6" step="0.1" style="vertical-align: middle;" data-ng-model="speed"> (<span data-ng-bind="speed">1</span>x)<br>
+              <input id="hint_stickers" type="checkbox" data-ng-model="hint_stickers" /> <label for="hint_stickers">Hint Stickers</label>
+              <input id="hollow" type="checkbox" data-ng-model="hollow" /> <label for="hollow">Hollow</label>
+            </div>
+          </div>
+          <h2>For Chai-And-Why</h2>
+          <div class="section buttons" id="examples">
+            <button href="" data-ng-click="demo('WR');">WR
+            </button><button href="" data-ng-click="demo('CaW_notation');">Notation
+            </button><button href="" data-ng-click="demo('CaW_undoing');">Undoing
+            </button><button href="" data-ng-click="demo('CaW_commutators');">Comms
+            </button><button href="" data-ng-click="demo('CaW_insert_corner-1');">Corner1
+            </button><button href="" data-ng-click="demo('CaW_insert_corner-2');">Corner2
+            </button><button href="" data-ng-click="demo('CaW_insert_edge_1');">Edge-1
+            </button><button href="" data-ng-click="demo('CaW_insert_edge_2');">Edge-2
+            </button><button href="" data-ng-click="demo('CaW_3corner');">Corn-comm
+            </button><button href="" data-ng-click="demo('CaW_3edge');">Edge-comm
+            </button><button href="" data-ng-click="demo('CaW_corner_twisted');">Corn-flip
+            </button><button href="" data-ng-click="demo('CaW_edge_twisted');">Edge-flip
+            </button>
+
+          </div>
           <h2>Settings</h2>
           <div class="section">
             <select
@@ -158,14 +183,6 @@
             <input class="current_scheme" type="text" data-ng-show="!scheme.custom" data-ng-readonly="true" data-ng-value="scheme.scheme"/>
           </div>
 
-          <div>
-            <h2>Playback Options</h2>
-            <div class="section">
-              Speed: <input type="range" min="0.1" max="6" step="0.1" style="vertical-align: middle;" data-ng-model="speed"> (<span data-ng-bind="speed">1</span>x)<br>
-              <input id="hint_stickers" type="checkbox" data-ng-model="hint_stickers" /> <label for="hint_stickers">Hint Stickers</label>
-              <input id="hollow" type="checkbox" data-ng-model="hollow" /> <label for="hollow">Hollow</label>
-            </div>
-          </div>
 
           <div>
             <h2>Tools</h2>
@@ -217,15 +234,6 @@
           </div>
           </div>
 
-          <h2>Examples</h2>
-          <div class="section buttons" id="examples">
-            <button href="" data-ng-click="demo('yusheng-3.47');">WR
-            </button><button href="" data-ng-click="demo('T-Perm');">T
-            </button><button href="" data-ng-click="demo('Sune');">Sune
-            </button><button href="" data-ng-click="demo('notation');">Notation
-            </button><button onclick="location.href = 'https://www.speedsolving.com/wiki/index.php/OLL'">OLLs
-            </button><button onclick="location.href = 'http://www.speedsolving.com/wiki/index.php/PLL'">PLLs</button>
-          </div>
 
           <h2>Info</h2>
           <div class="section buttons" id="info-section">

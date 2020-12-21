@@ -169,7 +169,7 @@ algxControllers.controller('algxController', ["$scope", "$location", "debounce",
 
   $scope.setupStatus = "valid";
   $scope.algStatus = "valid";
-  $scope.hint_stickers = true;
+  $scope.hint_stickers = false;
 
   initParameter("view", "editor", [
     { id: "editor", next: "playback", fullscreen: false, infoPane: true, extraControls: true, highlightMoveFields: true },
@@ -670,6 +670,111 @@ algxControllers.controller('algxController', ["$scope", "$location", "debounce",
 
   // TODO: Use IFs for puzzle/type
   var demos = {
+    "WR": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["reconstruction"],
+      title: "Yusheng Du, 3.47 WR",
+      setup: "F U2 L2 B2 F' U L2 U R2 D2 L' B L2 B' R2 U2",
+      alg: "y x' // inspection\nU R2 U' F' L F' U' L' // XX-Cross + EO\nU' R U R' // 3rd slot\nR' U R U2' R' U R // 4th slot\nU R' U' R U' R' U2 R // OLL / ZBLL\nU // AUF\n\n// from http://cubesolv.es/solve/5757"
+    },
+    "CaW_notation": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Let's give them names",
+      setup: "",
+      alg: "F R U L B D\nF' R' U' R2\nM S E\nx y z"
+    },
+    "CaW_undoing": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Undoing a sequence of moves",
+      setup: "",
+      alg: "R U F' D x"
+    },
+    "CaW_commutators": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Commutators",
+      setup: "",
+      alg: "[R, U]"
+    },
+    "CaW_insert_corner-1": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Solving 1 layer: Inserting a corner correctly",
+      setup: "R' F' U2 L U2 R' F' R2 B' F U B' F2 D2 F2 L' R2 D' F2 L' F' R F D' U B' U2 B F2 R2 F' B L R' D' R' B R D L D' L' D R D' R' B D2 B' R' D' R D2 F D' F'  R' D' R D",
+      alg: "R\nR'\nBw R Bw'"
+    },
+    "CaW_insert_corner-2": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Solving 1 layer: Inserting a corner correctly (alternate)",
+      setup: "R' F' U2 L U2 R' F' R2 B' F U B' F2 D2 F2 L' R2 D' F2 L' F' R F D' U B' U2 B F2 R2 F' B L R' D' R' B R D L D' L' D R D' R' B D2 B' R' D' R D2 F D' F'  R' D' R D",
+      alg: "D' R' D R"
+    },
+    "CaW_insert_edge_1": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Solving 1 layer: Inserting an edge correctly (1)",
+      setup: "R' F' U2 L U2 R' F' R2 B' F U B' F2 D2 F2 L' R2 D' F2 L' F' R F D' U B' U2 B F2 R2 F' B L R' D' R' B R D L D' L' D R D' R' B D2 B' R' D' R D2 F D' F' R L' F2 R' L",
+      alg: "F2\nF2'\nR L' F2 L R'"
+    },
+    "CaW_insert_edge_2": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Solving 1 layer: Inserting an edge correctly (2)",
+      setup: "R' F' U2 L U2 R' F' R2 B' F U B' F2 D2 F2 L' R2 D' F2 L' F' R F D' U B' U2 B F2 R2 F' B L R' D' R' B R D L D' L' D R D' R' B D2 B' R' D' R D2 F D' F' M D M' D'",
+      alg: "D' M D M'"
+    },
+    "CaW_seq1": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Seq 1",
+      setup: "",
+      alg: "x2 F U R U' R' F' R U R' U' F' U' F x2"
+    },
+    "CaW_seq2": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Seq 2",
+      setup: "",
+      alg: "R U R' U' R' F R F'  R U R' U' F' U' F"
+    },
+    "CaW_com_seq1_seq2": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "[Seq 1, Seq 2]",
+      setup: "",
+      alg: "x2 F U R U' R' F' R U R' U' F' U' F x2 \nR U R' U' R' F R F'  R U R' U' F' U' F \n(x2 F U R U' R' F' R U R' U' F' U' F x2)' \n(R U R' U' R' F R F'  R U R' U' F' U' F)' "
+    },
+    "CaW_3corner": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "1 corner moved",
+      setup: "",
+      alg: "R' D' R"
+    },
+    "CaW_corner_twisted": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Corner moves to itself",
+      setup: "",
+      alg: "R' D' R D D F D' F'"
+    },
+    "CaW_3edge": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "1 edge moved ",
+      setup: "",
+      alg: "M D' M'"
+    },
+    "CaW_edge_twisted": {
+      puzzle: $scope.puzzle_map["3x3x3"],
+      type: $scope.type_map["moves"],
+      title: "Edge moves to itself",
+      setup: "",
+      alg: "M D' M' D L' R F2 L R'"
+    },
     "yusheng-3.47": {
       puzzle: $scope.puzzle_map["3x3x3"],
       type: $scope.type_map["reconstruction"],
