@@ -157,7 +157,8 @@ algxControllers.controller('algxController', ["$scope", "$location", "debounce",
   ]);
 
   // TODO: BOY/Japanese translations.
-  initParameter("scheme", "boy", [
+  initParameter("scheme", "boy-yellow-on-top", [
+    { id: "boy-yellow-on-top", name: "BOY-YT", type: "Color Scheme", scheme: "gorbwy", display: "BOY-YT", custom: false },
     { id: "boy", name: "BOY", type: "Color Scheme", scheme: "grobyw", display: "BOY", custom: false },
     { id: "japanese", name: "Japanese", type: "Color Scheme", scheme: "groybw", display: "Japanese", custom: false },
     { id: "custom", name: "Custom:", type: "Color Scheme", scheme: "grobyw", display: "", custom: true }
