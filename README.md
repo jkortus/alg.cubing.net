@@ -13,7 +13,7 @@ This is a fork of alg.cubing.net original and the only changes are:
 - README changed
 
 Made as a response to https://github.com/cubing/alg.cubing.net/issues/23.
-Hopefully yufanyufan was right, I fixed his according to his proposal.
+Hopefully yufanyufan was right, I fixed this according to his proposal.
 
 It seems that the original authors have no intent of adding this feature
 as they are busy with new versions and more important tasks. So until
