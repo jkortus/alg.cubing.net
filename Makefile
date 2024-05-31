@@ -11,6 +11,22 @@ deploy: alg.cubing.net.zip
 		alg.cubing.net:~/alg.cubing.net/
 	echo "\nDone deploying. Go to https://alg.cubing.net/\n"
 
+# Deploy to the dist folder, which is used for the production site.
+.PHONY: dist
+dist:
+	rm -rf ./dist
+	git submodule update --init --recursive
+	rsync -avz \
+		--exclude .DS_Store \
+		--exclude .git \
+		--exclude .gitignore \
+		--exclude .gitmodules \
+		--exclude dist/ \
+		./ \
+		dist/
+	echo "\nDone. Upload the content of ./dist directory to the production server.\n"
+
+
 .PHONY: deploy-test
 deploy-test:
 	rsync -avz \
