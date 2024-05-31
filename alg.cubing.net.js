@@ -284,7 +284,7 @@ algxControllers.controller('algxController', ["$scope", "$location", "debounce",
     var text = algWithCommentsGreyed +
       '\n[COLOR="gray"]// View at [URL="' +
       url +
-      '"]alg.cubing.net[/URL][/COLOR]';
+      '"]alg.cubing.cz[/URL][/COLOR]';
     if ($scope.setup !== "") {
       text = "[COLOR=\"gray\"]/* Scramble */[/COLOR]\n" +
         $scope.setup +
@@ -309,7 +309,7 @@ algxControllers.controller('algxController', ["$scope", "$location", "debounce",
 
     // TODO: Inject playback view into parameters properly.
     // Right now it's fine because the view paramater is hidden in editor view, which is the only time you see a forum link.
-    $scope.share_url = "https://alg.cubing.net" + $location.url();
+    $scope.share_url = "https://alg.cubing.cz" + $location.url();
     if ($location.url().indexOf("?") !== -1) {
       $scope.share_url += '&view=playback';
     }
