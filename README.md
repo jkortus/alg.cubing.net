@@ -1,5 +1,7 @@
 # Changes
 
+https://alg.cubing.cz
+
 This is a fork of alg.cubing.net original and the only changes are:
 
 - BOY-YT color scheme which puts yellow on top. This is the default scheme.
