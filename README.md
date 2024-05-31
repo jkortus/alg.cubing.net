@@ -15,6 +15,12 @@ This is a fork of alg.cubing.net original and the only changes are:
 Made as a response to https://github.com/cubing/alg.cubing.net/issues/23.
 Hopefully yufanyufan was right, I fixed his according to his proposal.
 
+It seems that the original authors have no intent of adding this feature
+as they are busy with new versions and more important tasks. So until
+they finish their new piece, we can enjoy this legacy code, just with yellow
+on top. As soon as they finish the new product, this fork might no longer
+be of any use.
+
 I take no credit for the fixes or any code, I just put it together.
 
 Let's have yellow on top!! :D
