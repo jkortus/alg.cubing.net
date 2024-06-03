@@ -30,6 +30,16 @@
   <script src="lib/elastic.js"></script>
   <script src="alg.cubing.net.js"></script>
 
+  <!-- script to run when the whole document loads to reset the puzzle -->
+  <script>
+    $(document).ready(function() {
+      // sleep for 1 second to let the angular app load
+      setTimeout(function() {
+        $("#reset").trigger("click");
+      }, 200);
+    });
+  </script>
+
 </head>
 <body>
 
